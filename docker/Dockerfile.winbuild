@@ -1,0 +1,28 @@
+FROM cdrx/pyinstaller-windows:python3
+
+WORKDIR /src
+
+# Install Python deps needed for building the app
+COPY docker/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Copy project sources
+COPY . /src
+
+# Build .exe and write artifacts back to bind mount
+CMD [
+  "pyinstaller",
+  "--clean",
+  "--noconfirm",
+  "--onefile",
+  "--name","CSVProcessor",
+  "--windowed",
+  "--distpath","/src/dist/windows",
+  "--workpath","/src/build/windows",
+  "--specpath","/src/build/windows",
+  "src/app.py"
+]
+
+
+
+
