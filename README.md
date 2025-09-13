@@ -7,6 +7,7 @@ dist\CSVPrcessor.exe
 
 
 ### For any laptop with just double click into CSVPrcessor.exe
+.exe file here https://drive.google.com/file/d/15vJNmcKLfvutnqQdxYE5mOV2yOcKkgeu/view?usp=sharing
 Please do this once:
 1. Win+R -> paste %USERPROFILE% -> Enter
 2. Create new folder: .streamlit (if not existed)
